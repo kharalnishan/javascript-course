@@ -1,14 +1,52 @@
-.toggle-button {
-  background-color: rgb(230, 230, 230);
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  margin-right: 10px;
-  font-size: 15px;
-  cursor: pointer;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10f</title>
+  <style>
+    .buttonOff{
+      
+      border: none;
+      border-radius: 8px;
+      font-family: Arial;
+      font-size: 15px;
+      color: black;
+      padding: 10px 15px;
+    }
+    .buttonOn{
+      border: 2px solid blue;
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button class="buttonOff gaming" onclick="
 
-.is-toggled {
-  background-color: black;
-  color: white;
-}
+    iconChanger('gaming');
+  
+  ">Gaming</button>
+  <button class="buttonOff music" onclick="
+
+    iconChanger('music');
+  
+  ">Music</button>
+  <button class="buttonOff tech" onclick="
+
+    iconChanger('tech');
+    
+  
+  ">Tech</button>
+  <script>
+    function iconChanger(buttonName) {
+      const condition = document.querySelector(`.${buttonName}`);
+        if(!condition.classList.contains('buttonOn')) {
+          condition.classList.add('buttonOn');
+        } else  {
+          condition.classList.remove('buttonOn');
+        }
+    }
+  </script>
+</body>
+</html>
